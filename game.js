@@ -22,7 +22,7 @@ function slotGame(username, bet) {
         console.log("Ви програли.");
     }
 
-    console.log(Поточний баланс: ${users[username].balance} грн);
+    console.log(`Поточний баланс: ${users[username].balance} грн`);
 }
 
 module.exports = { slotGame };
