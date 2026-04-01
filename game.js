@@ -16,10 +16,12 @@ function slotGame(username, bet) {
     const result = Math.random() < 0.5;
 
     if (result) {
-        users[username].balance += bet * 2;
-        console.log("Ви виграли!");
+        const win = bet * 2;
+        users[username].balance += win;
+        console.log("Ви виграли у слот!");
+        console.log(`Ваш виграш: ${win} грн`);
     } else {
-        console.log("Ви програли.");
+        console.log("Ви програли у слот.");
     }
 
     console.log(`Поточний баланс: ${users[username].balance} грн`);
