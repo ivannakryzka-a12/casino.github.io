@@ -15,4 +15,3 @@ function depositBalance(username, amount) {
 }
 
 module.exports = { showBalance, depositBalance };
-// Create a function that withdraws money from user's balance and checks if there are enough funds
