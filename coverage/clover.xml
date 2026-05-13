@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1778671027400" clover="3.2.0">
-  <project timestamp="1778671027400" name="All files">
+<coverage generated="1778672645931" clover="3.2.0">
+  <project timestamp="1778672645931" name="All files">
     <metrics statements="24" coveredstatements="23" conditionals="21" coveredconditionals="20" methods="4" coveredmethods="4" elements="49" coveredelements="47" complexity="0" loc="24" ncloc="24" packages="1" files="1" classes="1"/>
-    <file name="betting.js" path="C:\Users\Сергей\casino.github.io\betting.js">
+    <file name="betting.js" path="C:\Users\Asus\Downloads\casino.github.io\betting.js">
       <metrics statements="24" coveredstatements="23" conditionals="21" coveredconditionals="20" methods="4" coveredmethods="4"/>
       <line num="6" count="10" type="stmt"/>
       <line num="7" count="10" type="stmt"/>
