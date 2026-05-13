@@ -1,0 +1,24 @@
+{
+  "name": "casino.github.io",
+  "version": "1.0.0",
+  "description": "Це навчальний проєкт з JavaScript, який моделює базові функції онлайн-казино.",
+  "main": "main.js",
+ "scripts": {
+  "test": "jest --coverage"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivannakryzka-a12/casino.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ivannakryzka-a12/casino.github.io/issues"
+  },
+  "homepage": "https://github.com/ivannakryzka-a12/casino.github.io#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
