@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Це навчальний проєкт з JavaScript, який моделює базові функції онлайн-казино.",
   "main": "main.js",
- "scripts": {
-  "test": "jest --coverage"
-},
+  "scripts": {
+    "test": "jest --coverage"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivannakryzka-a12/casino.github.io.git"
@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/ivannakryzka-a12/casino.github.io#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0",
     "jest": "^30.4.2"
   }
 }
