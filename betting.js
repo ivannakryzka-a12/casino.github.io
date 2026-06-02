@@ -1,9 +1,22 @@
 // Тимчасовий коментар Іванни для активації ЛР4
-/** 
-* Клас BettingService реалізує логіку керування ставками.
+
+const MIN_ODDS = 1.0;
+
+const BetStatus = Object.freeze({
+    PENDING: 'pending',
+    WON: 'won',
+    LOST: 'lost'
+});
+
+/** * Клас BettingService реалізує логіку керування ставками.
  */
 class BettingService {
+    static MIN_BET = 10;
+    static MAX_BET = 10000;
+    static VALID_STATUSES = [BetStatus.WON, BetStatus.LOST];
+
     constructor() {
+        // Зберігаємо оригінальні властивості для повної сумісності з тестами ЛР3
         this.MIN_BET = 10;
         this.MAX_BET = 10000;
         this.VALID_STATUSES = ['won', 'lost'];
@@ -20,10 +33,10 @@ class BettingService {
         if (amount < this.MIN_BET || amount > this.MAX_BET) {
             throw new Error("Amount out of range");
         }
-        if (odds <= 1.0) {
+        if (odds <= MIN_ODDS) {
             throw new Error("Odds must be greater than 1.0");
         }
-        return { amount, odds, status: 'pending' };
+        return { amount, odds, status: BetStatus.PENDING };
     }
 
     /**
@@ -31,14 +44,18 @@ class BettingService {
      * Реалізує логіку еквівалентного розбиття (EP) для статусів.
      */
     resolveBet(bet, result) {
-        if (!bet || typeof bet !== 'object' || bet.status !== 'pending') {
+        // Виправлення за коментарем Аліни: Extract Variable
+        const isBetInvalid = !bet || typeof bet !== 'object' || bet.status !== BetStatus.PENDING;
+        
+        if (isBetInvalid) {
             throw new Error("Bet cannot be resolved");
         }
         if (!this.VALID_STATUSES.includes(result)) {
             throw new Error("Unknown result type");
         }
-        bet.status = result;
-        return bet;
+
+        // Виправлення за коментарем Аліни: Повернення копії (уникнення мутації)
+        return { ...bet, status: result };
     }
 
     /**
@@ -51,7 +68,7 @@ class BettingService {
         }
         let total = 0;
         for (let bet of bets) {
-            if (bet.status === 'won') {
+            if (bet.status === BetStatus.WON) {
                 total += (bet.amount * bet.odds);
             }
         }
