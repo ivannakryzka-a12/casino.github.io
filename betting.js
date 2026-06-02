@@ -1,3 +1,4 @@
+// Тимчасовий коментар Софії для ЛР 4
 // Тимчасовий коментар Іванни для активації ЛР4
 
 const MIN_ODDS = 1.0;
@@ -8,6 +9,8 @@ const BetStatus = Object.freeze({
     LOST: 'lost'
 });
 
+/**
+ * Клас BettingService реалізує логіку керування ставками.
 /** * Клас BettingService реалізує логіку керування ставками.
  */
 class BettingService {
@@ -22,12 +25,12 @@ class BettingService {
         this.VALID_STATUSES = ['won', 'lost'];
     }
 
-    /**
+    /** 
      * Створює нову ставку з валідацією вхідних даних.
      * Використовує розгалуження для перевірки меж (BVA).
      */
     placeBet(amount, odds) {
-        if (typeof amount !== 'number' || typeof odds !== 'number') {
+        if (typeof amount !== 'number'||  typeof odds !== 'number') {
             throw new Error("Invalid input type");
         }
         if (amount < this.MIN_BET || amount > this.MAX_BET) {
@@ -39,7 +42,7 @@ class BettingService {
         return { amount, odds, status: BetStatus.PENDING };
     }
 
-    /**
+    /** 
      * Змінює статус ставки на основі результату.
      * Реалізує логіку еквівалентного розбиття (EP) для статусів.
      */
@@ -58,7 +61,7 @@ class BettingService {
         return { ...bet, status: result };
     }
 
-    /**
+    /** 
      * Обчислює загальну суму виграшу для масиву ставок.
      * Містить цикл та умовний перехід (нетривіальна логіка).
      */
