@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1778672645931" clover="3.2.0">
-  <project timestamp="1778672645931" name="All files">
-    <metrics statements="24" coveredstatements="23" conditionals="21" coveredconditionals="20" methods="4" coveredmethods="4" elements="49" coveredelements="47" complexity="0" loc="24" ncloc="24" packages="1" files="1" classes="1"/>
+<coverage generated="1780404770340" clover="3.2.0">
+  <project timestamp="1780404770340" name="All files">
+    <metrics statements="29" coveredstatements="28" conditionals="21" coveredconditionals="20" methods="4" coveredmethods="4" elements="54" coveredelements="52" complexity="0" loc="29" ncloc="29" packages="1" files="1" classes="1"/>
     <file name="betting.js" path="C:\Users\Asus\Downloads\casino.github.io\betting.js">
-      <metrics statements="24" coveredstatements="23" conditionals="21" coveredconditionals="20" methods="4" coveredmethods="4"/>
-      <line num="6" count="10" type="stmt"/>
-      <line num="7" count="10" type="stmt"/>
-      <line num="8" count="10" type="stmt"/>
-      <line num="16" count="4" type="cond" truecount="3" falsecount="1"/>
-      <line num="17" count="0" type="stmt"/>
-      <line num="19" count="4" type="cond" truecount="4" falsecount="0"/>
-      <line num="20" count="1" type="stmt"/>
-      <line num="22" count="3" type="cond" truecount="2" falsecount="0"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="25" count="2" type="stmt"/>
-      <line num="33" count="3" type="cond" truecount="5" falsecount="0"/>
+      <metrics statements="29" coveredstatements="28" conditionals="21" coveredconditionals="20" methods="4" coveredmethods="4"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="20" count="10" type="stmt"/>
+      <line num="21" count="10" type="stmt"/>
+      <line num="22" count="10" type="stmt"/>
+      <line num="30" count="4" type="cond" truecount="3" falsecount="1"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="33" count="4" type="cond" truecount="4" falsecount="0"/>
       <line num="34" count="1" type="stmt"/>
-      <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="36" count="3" type="cond" truecount="2" falsecount="0"/>
       <line num="37" count="1" type="stmt"/>
-      <line num="39" count="1" type="stmt"/>
-      <line num="40" count="1" type="stmt"/>
-      <line num="48" count="3" type="cond" truecount="2" falsecount="0"/>
-      <line num="49" count="1" type="stmt"/>
-      <line num="51" count="2" type="stmt"/>
-      <line num="52" count="2" type="stmt"/>
-      <line num="53" count="3" type="cond" truecount="2" falsecount="0"/>
-      <line num="54" count="2" type="stmt"/>
-      <line num="57" count="2" type="stmt"/>
-      <line num="61" count="1" type="stmt"/>
+      <line num="39" count="2" type="stmt"/>
+      <line num="48" count="3" type="cond" truecount="3" falsecount="0"/>
+      <line num="50" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="51" count="1" type="stmt"/>
+      <line num="53" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="54" count="1" type="stmt"/>
+      <line num="58" count="1" type="stmt"/>
+      <line num="66" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="67" count="1" type="stmt"/>
+      <line num="69" count="2" type="stmt"/>
+      <line num="70" count="2" type="stmt"/>
+      <line num="71" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="72" count="2" type="stmt"/>
+      <line num="75" count="2" type="stmt"/>
+      <line num="79" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
