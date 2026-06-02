@@ -1,4 +1,5 @@
 // Тимчасовий коментар Софії для ЛР 4
+// Тимчасовий коментар Іванни для активації ЛР4
 
 const MIN_ODDS = 1.0;
 
@@ -10,6 +11,7 @@ const BetStatus = Object.freeze({
 
 /**
  * Клас BettingService реалізує логіку керування ставками.
+/** * Клас BettingService реалізує логіку керування ставками.
  */
 class BettingService {
     static MIN_BET = 10;
@@ -17,6 +19,7 @@ class BettingService {
     static VALID_STATUSES = [BetStatus.WON, BetStatus.LOST];
 
     constructor() {
+        // Зберігаємо оригінальні властивості для повної сумісності з тестами ЛР3
         this.MIN_BET = 10;
         this.MAX_BET = 10000;
         this.VALID_STATUSES = ['won', 'lost'];
@@ -44,6 +47,7 @@ class BettingService {
      * Реалізує логіку еквівалентного розбиття (EP) для статусів.
      */
     resolveBet(bet, result) {
+        // Виправлення за коментарем Аліни: Extract Variable
         const isBetInvalid = !bet || typeof bet !== 'object' || bet.status !== BetStatus.PENDING;
         
         if (isBetInvalid) {
@@ -53,6 +57,7 @@ class BettingService {
             throw new Error("Unknown result type");
         }
 
+        // Виправлення за коментарем Аліни: Повернення копії (уникнення мутації)
         return { ...bet, status: result };
     }
 

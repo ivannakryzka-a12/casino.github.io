@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.83% </span>
+                <span class="strong">96.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/24</span>
+                <span class='fraction'>28/29</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.83% </span>
+                <span class="strong">96.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/24</span>
+                <span class='fraction'>28/29</span>
             </div>
         
             
@@ -123,8 +123,40 @@
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,13 +187,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -183,11 +219,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Клас BettingService реалізує логіку керування ставками.
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">// Тимчасовий коментар Іванни для активації ЛР4
+&nbsp;
+const MIN_ODDS = 1.0;
+&nbsp;
+const BetStatus = Object.freeze({
+    PENDING: 'pending',
+    WON: 'won',
+    LOST: 'lost'
+});
+&nbsp;
+/** * Клас BettingService реалізує логіку керування ставками.
  */
 class BettingService {
+    static MIN_BET = 10;
+    static MAX_BET = 10000;
+    static VALID_STATUSES = [BetStatus.WON, BetStatus.LOST];
+&nbsp;
     constructor() {
+        // Зберігаємо оригінальні властивості для повної сумісності з тестами ЛР3
         this.MIN_BET = 10;
         this.MAX_BET = 10000;
         this.VALID_STATUSES = ['won', 'lost'];
@@ -204,10 +254,10 @@ class BettingService {
         if (amount &lt; this.MIN_BET || amount &gt; this.MAX_BET) {
             throw new Error("Amount out of range");
         }
-        if (odds &lt;= 1.0) {
+        if (odds &lt;= MIN_ODDS) {
             throw new Error("Odds must be greater than 1.0");
         }
-        return { amount, odds, status: 'pending' };
+        return { amount, odds, status: BetStatus.PENDING };
     }
 &nbsp;
     /**
@@ -215,14 +265,18 @@ class BettingService {
      * Реалізує логіку еквівалентного розбиття (EP) для статусів.
      */
     resolveBet(bet, result) {
-        if (!bet || typeof bet !== 'object' || bet.status !== 'pending') {
+        // Виправлення за коментарем Аліни: Extract Variable
+        const isBetInvalid = !bet || typeof bet !== 'object' || bet.status !== BetStatus.PENDING;
+        
+        if (isBetInvalid) {
             throw new Error("Bet cannot be resolved");
         }
         if (!this.VALID_STATUSES.includes(result)) {
             throw new Error("Unknown result type");
         }
-        bet.status = result;
-        return bet;
+&nbsp;
+        // Виправлення за коментарем Аліни: Повернення копії (уникнення мутації)
+        return { ...bet, status: result };
     }
 &nbsp;
     /**
@@ -235,7 +289,7 @@ class BettingService {
         }
         let total = 0;
         for (let bet of bets) {
-            if (bet.status === 'won') {
+            if (bet.status === BetStatus.WON) {
                 total += (bet.amount * bet.odds);
             }
         }
@@ -250,7 +304,7 @@ module.exports = BettingService;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-13T11:44:05.920Z
+                at 2026-06-02T12:52:50.328Z
             </div>
         <script src="prettify.js"></script>
         <script>
